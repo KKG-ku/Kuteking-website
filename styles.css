@@ -63,7 +63,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  padding-top: 70px;
+  padding-top: 48px;
   background: 
     radial-gradient(1400px 1000px at 85% -15%, rgba(251, 191, 36, 0.08), transparent 70%),
     radial-gradient(800px 600px at 15% 100%, rgba(139, 92, 246, 0.06), transparent 60%),
@@ -399,7 +399,7 @@ table {
   backdrop-filter: blur(12px) saturate(180%);
   -webkit-backdrop-filter: blur(12px) saturate(180%);
   border-radius: var(--radius-md);
-  overflow: hidden;
+  overflow-x: scroll;
   box-shadow: var(--shadow-md), inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
@@ -443,11 +443,14 @@ tr:hover td {
   background: rgba(255, 255, 255, 0.03);
   color: var(--text-primary);
 }
+tbody{
+  overflow-x: scroll;
+
+}
 
 /* Table wrapper for better mobile handling */
 .table-wrapper {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  /* -webkit-overflow-scrolling: touch; */
   border-radius: var(--radius-md);
   background: var(--card-bg);
   backdrop-filter: blur(16px) saturate(180%);
@@ -459,7 +462,7 @@ tr:hover td {
 
 /* Tokenomics cards equal height */
 .tokenomics .grid.cols-2 {
-  align-items: stretch;
+  align-items:center;
 }
 
 .tokenomics .grid.cols-2 > div {
@@ -468,7 +471,7 @@ tr:hover td {
 }
 
 .tokenomics-info-card {
-  height: 100%;
+  /* height: 100%; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -885,18 +888,25 @@ footer::before {
   }
   
   .tokenomics-info-card {
-    padding: var(--space-lg);
+    padding: var(--space-md);
+    min-height: auto;
   }
   
   .tokenomics-info-card p {
+    font-size: 0.85rem;
+    margin-bottom: var(--space-xs);
+    line-height: 1.5;
+  }
+  
+  .tokenomics-info-card p strong {
     font-size: 0.9rem;
-    margin-bottom: var(--space-sm);
   }
   
   .tokenomics-info-card .row {
     flex-direction: column;
-    gap: var(--space-sm);
-    padding-top: var(--space-md);
+    gap: var(--space-xs);
+    padding-top: var(--space-sm);
+    margin-top: var(--space-sm);
   }
   
   .table-wrapper {
@@ -947,21 +957,6 @@ footer::before {
     border-spacing: 0;
     font-size: 12px;
     min-width: 600px;
-    overflow-x: auto;
-    display: block;
-    white-space: nowrap;
-  }
-  
-  .tokenomics-table thead,
-  .tokenomics-table tbody,
-  .tokenomics-table tr {
-    display: table;
-    width: 100%;
-    table-layout: fixed;
-  }
-  
-  .tokenomics-table thead {
-    width: calc(100% - 1em);
   }
   
   .tokenomics-table th {
@@ -1039,9 +1034,15 @@ footer::before {
   
   .tokenomics .btn {
     width: 100%;
-    padding: 14px 20px;
-    font-size: 15px;
+    padding: 10px 16px;
+    font-size: 13px;
     min-width: auto;
+  }
+  
+  .tokenomics-info-card .btn {
+    padding: 8px 8px;
+    font-size: 12px;
+    min-height: 36px;
   }
   
   .about-buttons {
@@ -1100,18 +1101,26 @@ footer::before {
   }
   
   .tokenomics-info-card {
-    padding: var(--space-lg);
+    /* width: 55%; */
+    /* padding: var(--space-lg); */
+    min-height: auto;
   }
   
   .tokenomics-info-card p {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     margin-bottom: var(--space-sm);
+    line-height: 1.6;
+  }
+  
+  .tokenomics-info-card p strong {
+    font-size: 0.95rem;
   }
   
   .tokenomics-info-card .row {
     flex-direction: column;
     gap: var(--space-sm);
     padding-top: var(--space-md);
+    margin-top: var(--space-md);
   }
   
   /* Button responsiveness for large mobile */
@@ -1120,6 +1129,12 @@ footer::before {
     min-width: auto;
     max-width: none;
     margin-bottom: 8px;
+  }
+  
+  .tokenomics-info-card .btn {
+    padding: 10px 4px;
+    font-size: 13px;
+    /* min-height: 40px; */
   }
   
   .tokenomics .btn:last-child, .about-buttons .btn:last-child {
@@ -1174,17 +1189,25 @@ footer::before {
   
   .tokenomics-info-card {
     padding: var(--space-xl);
+    min-height: auto;
   }
   
   .tokenomics-info-card p {
-    font-size: 1rem;
+    font-size: 0.95rem;
     margin-bottom: var(--space-md);
+    line-height: 1.6;
+  }
+  
+  .tokenomics-info-card p strong {
+    font-size: 1rem;
   }
   
   .tokenomics-info-card .row {
     flex-direction: row;
     gap: var(--space-md);
     padding-top: var(--space-lg);
+    margin-top: var(--space-lg);
+    flex-wrap: wrap;
   }
   
   /* Button responsiveness for tablets */
@@ -1277,6 +1300,30 @@ footer::before {
   .hero h1 {
     font-size: 56px;
   }
+  
+  .tokenomics-info-card {
+    padding: var(--space-2xl);
+    min-height: 100%;
+  }
+  
+  .tokenomics-info-card p {
+    font-size: 1rem;
+    margin-bottom: var(--space-md);
+    line-height: 1.7;
+  }
+  
+  .tokenomics-info-card p strong {
+    font-size: 1.1rem;
+  }
+  
+  .tokenomics-info-card .row {
+    flex-direction: row;
+    gap: var(--space-lg);
+    padding-top: var(--space-xl);
+    margin-top: auto;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
 }
 
 /* Navigation responsive behavior */
@@ -1324,7 +1371,7 @@ footer::before {
   table {
     display: block;
     overflow-x: auto;
-    white-space: nowrap;
+    white-space:wrap;
     font-size: 14px;
   }
   
@@ -1392,7 +1439,7 @@ footer::before {
 /* New Hero Section Styles */
 .hero-new {
   position: relative;
-  padding: 120px 0 80px;
+  padding: 90px 0 80px;
   overflow: hidden;
   background: var(--bg);
   min-height: 100vh;
