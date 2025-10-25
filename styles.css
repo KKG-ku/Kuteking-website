@@ -105,16 +105,40 @@ h2 {
 table {
   width: 100%;
   border-collapse: collapse;
+  overflow-x: auto;
+  display: block;
+  white-space: nowrap;
 }
+
+table thead,
+table tbody,
+table tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
 th,
 td {
   padding: 12px 10px;
   border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
-}
-th {
   text-align: left;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+th {
   color: #e9e9e9;
   font-weight: 700;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* Table wrapper for better mobile handling */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
 }
 .muted {
   color: var(--muted);
@@ -324,13 +348,40 @@ footer {
   }
   
   .tokenomics table {
-    font-size: 12px;
+    font-size: 13px;
+    display: table;
+    white-space: normal;
+  }
+  
+  .tokenomics table thead,
+  .tokenomics table tbody,
+  .tokenomics table tr {
+    display: table-row;
   }
   
   .tokenomics th,
   .tokenomics td {
-    padding: 6px 3px;
-    font-size: 12px;
+    padding: 8px 6px;
+    font-size: 13px;
+    display: table-cell;
+    white-space: normal;
+    word-break: break-word;
+  }
+  
+  .tokenomics th:first-child,
+  .tokenomics td:first-child {
+    width: 35%;
+  }
+  
+  .tokenomics th:nth-child(2),
+  .tokenomics td:nth-child(2) {
+    width: 20%;
+    text-align: center;
+  }
+  
+  .tokenomics th:last-child,
+  .tokenomics td:last-child {
+    width: 45%;
   }
   
   .tokenomics .row {
@@ -405,13 +456,28 @@ footer {
   }
   
   .tokenomics table {
-    font-size: 14px;
+    font-size: 15px;
+    display: table;
+    white-space: normal;
+  }
+  
+  .tokenomics table thead,
+  .tokenomics table tbody,
+  .tokenomics table tr {
+    display: table-row;
   }
   
   .tokenomics th,
   .tokenomics td {
-    padding: 10px 8px;
-    font-size: 14px;
+    padding: 12px 10px;
+    font-size: 15px;
+    display: table-cell;
+    white-space: normal;
+  }
+  
+  .tokenomics th:nth-child(2),
+  .tokenomics td:nth-child(2) {
+    text-align: center;
   }
   
   .tokenomics .row {
