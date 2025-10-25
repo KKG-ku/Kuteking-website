@@ -853,6 +853,7 @@ footer::before {
   
   table {
     font-size: 0.8rem;
+    width: 50%;
   }
   
   th, td {
@@ -891,6 +892,7 @@ footer::before {
   
   .tokenomics-info-card {
     padding: var(--space-md);
+    width: 50%;
     min-height: auto;
   }
   
