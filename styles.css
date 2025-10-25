@@ -947,6 +947,21 @@ footer::before {
     border-spacing: 0;
     font-size: 12px;
     min-width: 600px;
+    overflow-x: auto;
+    display: block;
+    white-space: nowrap;
+  }
+  
+  .tokenomics-table thead,
+  .tokenomics-table tbody,
+  .tokenomics-table tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+  
+  .tokenomics-table thead {
+    width: calc(100% - 1em);
   }
   
   .tokenomics-table th {
