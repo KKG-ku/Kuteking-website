@@ -521,12 +521,13 @@ tbody{
 
 @media (max-width: 768px) {
   .footer-break {
-    display: block;
+    display: inline;
   }
   
   .footer-content p {
     line-height: 1.8;
     text-align: center;
+    font-size: 0.75rem;
   }
 }
 .muted {
@@ -800,12 +801,12 @@ footer::before {
   }
   
   header {
-    padding: var(--space-sm) 0;
+    padding: var(--space-xl) 0;
   }
   
   nav {
     /* padding: 0 var(--space-md); */
-    padding: 10px;
+    padding: 20px;
   }
   
   .logo {
@@ -914,7 +915,7 @@ footer::before {
   }
   
   .table-wrapper {
-    overflow-x: auto;
+    overflow-x: visible;
     overflow-y: visible;
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.02);
@@ -1072,6 +1073,14 @@ footer::before {
     padding: 0 18px;
   }
   
+  header {
+    padding: var(--space-lg) 0;
+  }
+  
+  nav {
+    padding: 16px;
+  }
+  
   .about, .tokenomics, .roadmap, .links, .whitepaper {
     padding: 56px 0;
   }
@@ -1187,7 +1196,7 @@ footer::before {
   .table-wrapper {
     margin: 0;
     border-radius: 12px;
-    overflow-x: auto;
+    overflow-x: visible;
     -webkit-overflow-scrolling: touch;
   }
   
@@ -1374,7 +1383,7 @@ footer::before {
 @media (max-width: 768px) {
   table {
     display: block;
-    overflow-x: auto;
+    overflow-x: visible;
     white-space:wrap;
     font-size: 14px;
   }
@@ -1413,11 +1422,11 @@ footer::before {
   }
   
   .tokenomics-table th:nth-child(3) {
-    width: 50%;
+    width: 80%;
   }
   
   .tokenomics-table td:nth-child(2) {
-    min-width: 160px;
+    /* min-width: 200px; */
   }
   
   .tokenomics-table td:nth-child(3) {
