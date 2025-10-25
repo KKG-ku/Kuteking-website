@@ -577,12 +577,28 @@ footer {
   
   .tokenomics table {
     margin-bottom: 16px;
+    font-size: 14px;
+    display: table;
+    white-space: normal;
+  }
+  
+  .tokenomics table thead,
+  .tokenomics table tbody,
+  .tokenomics table tr {
+    display: table-row;
   }
   
   .tokenomics th,
   .tokenomics td {
-    padding: 8px 4px;
-    font-size: 13px;
+    padding: 10px 8px;
+    font-size: 14px;
+    display: table-cell;
+    white-space: normal;
+  }
+  
+  .tokenomics th:nth-child(2),
+  .tokenomics td:nth-child(2) {
+    text-align: center;
   }
   
   .tokenomics .row {
