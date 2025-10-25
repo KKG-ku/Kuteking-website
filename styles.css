@@ -957,11 +957,12 @@ footer::before {
   }
   
   .tokenomics-table {
-    width: 100%;
+    width: 80%;
     border-collapse: separate;
     border-spacing: 0;
     font-size: 12px;
     min-width: 600px;
+    overflow: scroll;
   }
   
   .tokenomics-table th {
