@@ -415,14 +415,18 @@ footer {
   }
   
   .tokenomics .row {
+    display: flex;
     flex-direction: row;
-    gap: 12px;
+    gap: 16px;
     flex-wrap: wrap;
+    margin-top: 24px;
+    justify-content: center;
   }
   
   .tokenomics .btn {
     flex: 1;
-    min-width: 140px;
+    min-width: 160px;
+    max-width: 200px;
   }
 }
 
@@ -516,12 +520,16 @@ footer {
   }
   
   .tokenomics .row {
+    display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 14px;
+    margin-top: 24px;
+    align-items: center;
   }
   
   .tokenomics .btn {
     width: 100%;
+    max-width: 300px;
     text-align: center;
   }
 }
@@ -559,8 +567,14 @@ footer {
 }
 
 @keyframes glow-pulse {
-  0% { opacity: 0.8; }
-  100% { opacity: 1; }
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
 }
 
 .hero-new .container {
