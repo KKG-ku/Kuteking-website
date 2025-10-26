@@ -107,58 +107,103 @@
     <div class="container">
       <span class="kicker">Transparency</span>
       <h2>Tokenomics</h2>
-      <div class="card">
-        <div class="grid cols-2">
-          <div>
-            <div class="table-wrapper">
-              <table class="tokenomics-table">
-                <thead>
-                  <tr>
-                    <th>Category</th>
-                    <th>Allocation</th>
-                    <th>Notes</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Total Supply</td>
-                    <td>1,000,000,000 KKG</td>
-                    <td>Fixed</td>
-                  </tr>
-                  <tr>
-                    <td>Liquidity</td>
-                    <td>50%</td>
-                    <td>Added &amp; <a href="https://tools.smithii.io/token-vesting-certificate/KutekingKKG" target="_blank" rel="noopener">Locked (view proof)</a></td>
-                  </tr>
-                  <tr>
-                    <td>Marketing &<br>Development</td>
-                    <td>25%</td>
-                    <td>Campaigns, listings, partnerships, platform improvements</td>
-                  </tr>
-                  <tr>
-                    <td>Community Rewards</td>
-                    <td>15%</td>
-                    <td>Airdrops, contests, raiders</td>
-                  </tr>
-                  <tr>
-                    <td>Burn Reserve</td>
-                    <td>10%</td>
-                    <td>Future strategic burns</td>
-                  </tr>
-                </tbody>
-              </table>
+      
+      <div class="tokenomics-grid">
+        <!-- Total Supply Card -->
+        <div class="tokenomics-card supply-card">
+          <div class="card-icon">💎</div>
+          <h3>Total Supply</h3>
+          <div class="stat-number">1,000,000,000</div>
+          <div class="stat-label">KKG Tokens</div>
+          <p class="card-description">Fixed supply with no additional minting</p>
+        </div>
+        
+        <!-- Liquidity Card -->
+        <div class="tokenomics-card liquidity-card">
+          <div class="card-icon">🔒</div>
+          <h3>Liquidity Pool</h3>
+          <div class="stat-number">50%</div>
+          <div class="stat-label">500M KKG</div>
+          <p class="card-description">Added & <a href="https://tools.smithii.io/token-vesting-certificate/KutekingKKG" target="_blank" rel="noopener">Locked (view proof)</a></p>
+        </div>
+        
+        <!-- Marketing Card -->
+        <div class="tokenomics-card marketing-card">
+          <div class="card-icon">🚀</div>
+          <h3>Marketing & Dev</h3>
+          <div class="stat-number">25%</div>
+          <div class="stat-label">250M KKG</div>
+          <p class="card-description">Campaigns, listings, partnerships & platform improvements</p>
+        </div>
+        
+        <!-- Community Card -->
+        <div class="tokenomics-card community-card">
+          <div class="card-icon">🎁</div>
+          <h3>Community Rewards</h3>
+          <div class="stat-number">15%</div>
+          <div class="stat-label">150M KKG</div>
+          <p class="card-description">Airdrops, contests & community raiders</p>
+        </div>
+        
+        <!-- Burn Reserve Card -->
+        <div class="tokenomics-card burn-card">
+          <div class="card-icon">🔥</div>
+          <h3>Burn Reserve</h3>
+          <div class="stat-number">10%</div>
+          <div class="stat-label">100M KKG</div>
+          <p class="card-description">Reserved for future strategic burns</p>
+        </div>
+        
+        <!-- Chart Visualization -->
+        <div class="tokenomics-chart">
+          <div class="chart-container">
+            <div class="chart-segment liquidity" style="--percentage: 50%" data-label="Liquidity 50%"></div>
+            <div class="chart-segment marketing" style="--percentage: 25%" data-label="Marketing 25%"></div>
+            <div class="chart-segment community" style="--percentage: 15%" data-label="Community 15%"></div>
+            <div class="chart-segment burn" style="--percentage: 10%" data-label="Burn 10%"></div>
+          </div>
+          <div class="chart-legend">
+            <div class="legend-item">
+              <span class="legend-color liquidity-color"></span>
+              <span>Liquidity Pool (50%)</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-color marketing-color"></span>
+              <span>Marketing & Dev (25%)</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-color community-color"></span>
+              <span>Community (15%)</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-color burn-color"></span>
+              <span>Burn Reserve (10%)</span>
             </div>
           </div>
-          <div>
-            <div class="card tokenomics-info-card">
-              <p><strong>Initial Ratio</strong>: 1 SOL = 10,000,000 KKG</p>
-              <p><strong>Taxes</strong>: 0% — fair launch</p>
-              <p><strong>Liquidity Lock</strong>: <a href="https://tools.smithii.io/token-vesting-certificate/KutekingKKG" target="_blank" rel="noopener">Certificate link</a></p>
-              <div class="row">
-                <a class="btn btn-primary" href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=E4RR6QLaAWEEnVC8nyrYC7mkHw6pjJXnY2uouETBpump" target="_blank" rel="noopener">Trade on Raydium</a>
-                <a class="btn btn-outline" href="https://dexscreener.com/solana/E4RR6QLaAWEEnVC8nyrYC7mkHw6pjJXnY2uouETBpump" target="_blank" rel="noopener">Open Dexscreener</a>
-              </div>
+        </div>
+        
+        <!-- Additional Tokenomics Info -->
+        <div class="tokenomics-info">
+          <div class="info-grid">
+            <div class="info-card">
+              <h4>Initial Ratio</h4>
+              <p class="info-value">1 SOL = 10,000,000 KKG</p>
             </div>
+            <div class="info-card">
+              <h4>Taxes</h4>
+              <p class="info-value">0% — Fair Launch</p>
+            </div>
+          </div>
+          
+          <div class="trading-buttons">
+            <a href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=KKG" target="_blank" rel="noopener" class="trade-btn raydium-btn">
+              <span class="btn-icon">⚡</span>
+              <span class="btn-text">Trade on Raydium</span>
+            </a>
+            <a href="https://dexscreener.com/solana/KKG" target="_blank" rel="noopener" class="trade-btn dexscreener-btn">
+              <span class="btn-icon">📊</span>
+              <span class="btn-text">Open Dexscreener</span>
+            </a>
           </div>
         </div>
       </div>
