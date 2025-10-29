@@ -94,10 +94,37 @@
         <h2>Contract & Identity</h2>
         <p class="muted">Verify and always double-check before trading.</p>
         <p><strong>Mint Address</strong></p>
-        <p class="mono">E4RR6QLaAWEEnVC8nyrYC7mkHw6pjJXnY2uouETBpump</p>
+        <p class="mono mint-address" id="mintAddress" onclick="copyMintAddress()" onkeydown="copyMintAddress(event)" tabindex="0" title="Click to copy or press Ctrl+C">E4RR6QLaAWEEnVC8nyrYC7mkHw6pjJXnY2uouETBpump</p>
         <div class="row about-buttons" style="margin-top:20px">
           <a class="btn btn-primary" href="https://solscan.io/token/E4RR6QLaAWEEnVC8nyrYC7mkHw6pjJXnY2uouETBpump" target="_blank" rel="noopener">📊 View on Solscan</a>
           <a class="btn btn-outline" href="https://dexscreener.com/solana/E4RR6QLaAWEEnVC8nyrYC7mkHw6pjJXnY2uouETBpump" target="_blank" rel="noopener">📈 Live Chart</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to Buy Section -->
+  <section id="how-to-buy" class="how-to-buy">
+    <div class="container">
+      <h2>How to Buy $KKG</h2>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-icon">💳</div>
+          <h3>GET A WALLET</h3>
+          <p>Download Phantom or your preferred Solana wallet</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <div class="step-icon">💰</div>
+          <h3>GET SOME SOL</h3>
+          <p>Buy SOL on any exchange and send to your wallet</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <div class="step-icon">🔄</div>
+          <h3>SWAP FOR $KKG</h3>
+          <p>Swap SOL for $KKG on Raydium or Jupiter</p>
         </div>
       </div>
     </div>
@@ -352,6 +379,44 @@
             navLinks.classList.remove('active');
           }
         });
+        
+        // Copy mint address function
+        function copyMintAddress(event) {
+          // Handle Ctrl+C keyboard shortcut
+          if (event && event.type === 'keydown') {
+            if (!(event.ctrlKey && event.key === 'c')) {
+              return;
+            }
+            event.preventDefault();
+          }
+          
+          const addressText = document.getElementById('mintAddress').textContent;
+          
+          navigator.clipboard.writeText(addressText).then(function() {
+            showCopyPopup();
+          }).catch(function(err) {
+            // Fallback for older browsers
+            const textArea = document.createElement('textarea');
+            textArea.value = addressText;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            showCopyPopup();
+          });
+        }
+        
+        // Show copy success popup
+        function showCopyPopup() {
+          const popup = document.createElement('div');
+          popup.className = 'copy-popup';
+          popup.textContent = 'Address Copied!';
+          document.body.appendChild(popup);
+          
+          setTimeout(function() {
+            document.body.removeChild(popup);
+          }, 2000);
+        }
       }
     });
   </script>
