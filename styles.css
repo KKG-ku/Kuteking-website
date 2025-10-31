@@ -718,6 +718,18 @@ td {
     0 0 30px rgba(255, 99, 71, 0.3);
 }
 
+.ecosystem-card:hover {
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(139, 90, 60, 0.3);
+}
+
+.team-card:hover {
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(153, 50, 204, 0.3);
+}
+
 /* Tokenomics Chart */
 .tokenomics-chart {
   grid-column: 1 / -1;
@@ -739,9 +751,11 @@ td {
   background: conic-gradient(
     from 0deg,
     #228b22 0% 50%,
-    #ff4500 50% 75%,
-    #1e90ff 75% 90%,
-    #ff6347 90% 100%
+    #ff4500 50% 70%,
+    #1e90ff 70% 80%,
+    #ff6347 80% 90%,
+    #8b5a3c 90% 95%,
+    #9932cc 95% 100%
   );
   box-shadow: 
     0 0 50px rgba(255, 215, 0, 0.2),
@@ -829,6 +843,14 @@ td {
 
 .burn-color {
   background: linear-gradient(135deg, #ff6347 0%, #ff7f50 100%);
+}
+
+.ecosystem-color {
+  background: linear-gradient(135deg, #8b5a3c 0%, #a0522d 100%);
+}
+
+.team-color {
+  background: linear-gradient(135deg, #9932cc 0%, #ba55d3 100%);
 }
 
 .legend-item span:last-child {
