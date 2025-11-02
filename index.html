@@ -113,10 +113,13 @@
         <p>A meme coin built on Solana, powered by trader discipline, market psychology, and community unity. Every holder is a king. Every chart is a battlefield. And every victory belongs to those who never quit. 👑</p>
       </div>
       <div class="card">
-        <h2>Contact & Community</h2>
-        <p class="muted">Connect with the Kuteking community and team.</p>
-        <p><strong>Contact Address</strong></p>
-        <p class="mono mint-address" id="mintAddress" onclick="copyMintAddress()" onkeydown="copyMintAddress(event)" tabindex="0" title="Click to copy or press Ctrl+C">Dk47MRXQ9fMCsy51JXhEceXdEtBkL3EyUSuzJiX7ii53</p>
+        <h2>Contact Address</h2>
+        <div class="contact-address-container">
+          <p class="mono mint-address" id="contactAddress">Dk47MRXQ9fMCsy51JXhEceXdEtBkL3EyUSuzJiX7ii53</p>
+          <button class="btn btn-outline copy-btn" onclick="copyContactAddress()" title="Copy contact address">
+            📋 Copy
+          </button>
+        </div>
         <div class="row about-buttons" style="margin-top:20px">
           <a class="btn btn-primary" href="https://solscan.io/token/E4RR6QLaAWEEnVC8nyrYC7mkHw6pjJXnY2uouETBpump" target="_blank" rel="noopener">📊 View on Solscan</a>
           <a class="btn btn-outline" href="https://dexscreener.com/solana/E4RR6QLaAWEEnVC8nyrYC7mkHw6pjJXnY2uouETBpump" target="_blank" rel="noopener">📈 Live Chart</a>
@@ -430,8 +433,8 @@
           }
         });
         
-        // Copy mint address function
-        function copyMintAddress(event) {
+        // Make copyMintAddress globally accessible
+        window.copyMintAddress = function(event) {
           // Handle Ctrl+C keyboard shortcut
           if (event && event.type === 'keydown') {
             if (!(event.ctrlKey && event.key === 'c')) {
@@ -456,11 +459,29 @@
           });
         }
         
+        // Make copyContactAddress globally accessible
+        window.copyContactAddress = function() {
+          const contactText = document.getElementById('contactAddress').textContent;
+          
+          navigator.clipboard.writeText(contactText).then(function() {
+            showCopyPopup('Contact Address Copied!');
+          }).catch(function(err) {
+            // Fallback for older browsers
+            const textArea = document.createElement('textarea');
+            textArea.value = contactText;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            showCopyPopup('Contact Address Copied!');
+          });
+        }
+        
         // Show copy success popup
-        function showCopyPopup() {
+        function showCopyPopup(message = 'Address Copied!') {
           const popup = document.createElement('div');
           popup.className = 'copy-popup';
-          popup.textContent = 'Address Copied!';
+          popup.textContent = message;
           document.body.appendChild(popup);
           
           setTimeout(function() {
