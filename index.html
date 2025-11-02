@@ -85,16 +85,17 @@
   <section class="manifesto">
     <div class="container">
       <div class="manifesto-content">
-        <h2 class="manifesto-title">Kuteking is the People's Crown — a symbol of resilience, built by a trader for the disciplined believers.</h2>
+        <h2 class="manifesto-title">Kuteking is the People's Crown a symbol of resilience,
+           built by a trader for the disciplined believers.</h2>
         <div class="manifesto-section">
           <h3>Why Kuteking exists</h3>
           <div class="crown-code">
             <h4>👑 The Crown's Code</h4>
             <ol class="crown-rules">
-              <li>Every chart is a battlefield — only the patient wear the crown.</li>
+              <li>Every chart is a battlefield, only the patient wear the crown.</li>
               <li>Discipline builds kings; greed destroys empires.</li>
               <li>We rise together, not by luck, but by loyalty.</li>
-              <li>Kuteking is more than a coin — it's a mindset.</li>
+              <li>Kuteking is more than a coin it's a mindset.</li>
               <li>Every holder is royalty. Every believer is family.</li>
             </ol>
           </div>
@@ -113,12 +114,12 @@
         <p>A meme coin built on Solana, powered by trader discipline, market psychology, and community unity. Every holder is a king. Every chart is a battlefield. And every victory belongs to those who never quit. 👑</p>
       </div>
       <div class="card">
-        <h2>Contact Address</h2>
+        <h2>Contract Address</h2>
         <div class="contact-address-container">
           <p class="mono mint-address" id="contactAddress">Dk47MRXQ9fMCsy51JXhEceXdEtBkL3EyUSuzJiX7ii53</p>
-          <button class="btn btn-outline copy-btn" onclick="copyContactAddress()" title="Copy contact address">
-            📋 Copy
-          </button>
+          <button class="btn btn-outline copy-btn" onclick="copyContactAddress()" title="Copy contract address">
+              📋 Copy
+            </button>
         </div>
         <div class="row about-buttons" style="margin-top:20px">
           <a class="btn btn-primary" href="https://solscan.io/token/E4RR6QLaAWEEnVC8nyrYC7mkHw6pjJXnY2uouETBpump" target="_blank" rel="noopener">📊 View on Solscan</a>
@@ -464,7 +465,7 @@
           const contactText = document.getElementById('contactAddress').textContent;
           
           navigator.clipboard.writeText(contactText).then(function() {
-            showCopyPopup('Contact Address Copied!');
+            showCopyPopup('Contract Address Copied!');
           }).catch(function(err) {
             // Fallback for older browsers
             const textArea = document.createElement('textarea');
@@ -473,7 +474,7 @@
             textArea.select();
             document.execCommand('copy');
             document.body.removeChild(textArea);
-            showCopyPopup('Contact Address Copied!');
+            showCopyPopup('Contract Address Copied!');
           });
         }
         
