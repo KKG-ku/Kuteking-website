@@ -2737,6 +2737,102 @@ footer::before {
     justify-content: center;
   }
 }
+
+/* Manifesto Section */
+.manifesto {
+  padding: var(--space-2xl) 0;
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.03) 0%, rgba(139, 92, 246, 0.02) 100%);
+  border-top: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.manifesto-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.manifesto-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--space-xl);
+  line-height: 1.2;
+}
+
+.manifesto-section h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-lg);
+}
+
+.crown-code {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  backdrop-filter: blur(20px);
+  box-shadow: var(--shadow-lg);
+}
+
+.crown-code h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gold-primary);
+  margin-bottom: var(--space-lg);
+  text-shadow: 0 2px 8px rgba(251, 191, 36, 0.3);
+}
+
+.crown-rules {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.crown-rules li {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-md);
+  padding: var(--space-md);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--gold-primary);
+  transition: all 0.3s ease;
+}
+
+.crown-rules li:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateX(5px);
+}
+
+.crown-rules li:last-child {
+  margin-bottom: 0;
+}
+
+/* Manifesto responsive */
+@media (max-width: 768px) {
+  .manifesto-title {
+    font-size: 2rem;
+  }
+  
+  .manifesto-section h3 {
+    font-size: 1.5rem;
+  }
+  
+  .crown-code {
+    padding: var(--space-lg);
+  }
+  
+  .crown-rules li {
+    font-size: 1rem;
+  }
+}
 -weight: 600;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
